@@ -1,5 +1,5 @@
 
-var button = document.getElementById('c1');
+var button = document.getElementById('counter');
 
 button.onClick = function(){
     
@@ -9,8 +9,8 @@ button.onClick = function(){
  request.onreadystatechange = function(){
      if(request.readystate == XMLHttpRequest.DONE){
          if(request.status == 200){
-             var c1 = request.responseText;
-             var span = document.getElementById('c2');
+             var counter = request.responseText;
+             var span = document.getElementById('count');
              span.innerHTML = counter.toString();
          }
      }
