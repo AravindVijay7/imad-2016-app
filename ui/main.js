@@ -17,7 +17,7 @@ button.onClick = function(){
      
  };
   
- request.open('GET' 'http://http://aravindvijay7.imad.hasura-app.io/counter', true);
+ request.open('GET','http://http://aravindvijay7.imad.hasura-app.io/counter', true);
  request.send(null);
     
 };
