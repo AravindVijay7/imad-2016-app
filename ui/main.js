@@ -1,5 +1,5 @@
-
-var button = document.getElementById('counter');
+//counter
+var button = document.getElementById("counter");
 
 button.onClick = function(){
     
@@ -19,5 +19,15 @@ button.onClick = function(){
   
  request.open('GET','http://http://aravindvijay7.imad.hasura-app.io/counter', true);
  request.send(null);
+    
+};
+
+//name ip
+
+var nameInput = document.getElementById('name');
+ var name = nameInput.value;
+var submit = document.getElementById('submit_btn');
+submit.onClick = fuction(){
+    
     
 };
