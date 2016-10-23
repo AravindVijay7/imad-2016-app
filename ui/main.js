@@ -1,11 +1,12 @@
-var counter = 0;
+
 var button = document.getElementById('counter');
+var counter = 0;
 button.onClick = function(){
     
     
   
   counter = counter + 1;
-  var span = document.getElemntById('count');
+  var span = document.getElementById('count');
   span.innerHTML = counter.toString();
     
 };
