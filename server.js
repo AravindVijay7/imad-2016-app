@@ -26,6 +26,69 @@ app.get('/submit-name',function(req,res){
    res.send(JSON.stringify(names));
 });
 
+
+var articleOne = {
+  title:'Article-one',
+  heading:'Article One',
+  date:'OCT 28,2016',
+  content:` <p class="para">
+                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+               </p>
+               
+               <p>
+                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+               </p>`
+  
+  
+};
+
+var htmlTemplate = `<html>
+    
+    <head>
+        
+        <title> ${title} </title>
+        <meta name="viewport" content="width=device-width , initial-scale-1"/> 
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    
+      <body>
+           
+          <div class="container"> 
+           <div>
+               <a href ="/">HOME</a>
+           </div>
+           
+           <hr/>
+           
+           <div align="center">
+               <h2>${heading} </h2>
+           </div>
+           
+           <div>
+               <h3>${date}</h3>
+           </div>
+           
+           <div>
+             ${content}
+           </div>
+           
+        </div>
+           
+           
+      </body>
+    
+    
+    
+    
+    
+</html>
+
+
 app.get('/article-one', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
