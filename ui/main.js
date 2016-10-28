@@ -28,10 +28,10 @@ $(function(){
     jQuery(document).ready(function() {
     $('#home').backstretch([
        "ui/main.jpg", 
-       "ui/sub.png",
+       "ui/sub.jpg",
         ],  {duration: 2000, fade: 750});
     });
-  });
+  })
 
 });
 
