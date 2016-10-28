@@ -22,6 +22,19 @@ button.onclick = function(){
     
 };
 
+
+
+$(function(){
+    jQuery(document).ready(function() {
+    $('#home').backstretch([
+       "ui/main.jpg", 
+       "ui/sub.png",
+        ],  {duration: 2000, fade: 750});
+    });
+  });
+
+});
+
 //name ip
 
 //var nameInput = document.getElementById('name');
