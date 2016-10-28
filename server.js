@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var pool = require('pg').Pool;
+var Pool = require('pg').Pool;
 
 var config = {
     user:'aravindvijay7',
@@ -123,7 +123,7 @@ var htmlTemplate = `<html>
 return htmlTemplate;
 }
 
-var pool= new Pool(config);
+var pool= new pool(config);
 
 app.get('/articles/:articleName', function (req, res) {
     //var articleName = req.params.articleName;
