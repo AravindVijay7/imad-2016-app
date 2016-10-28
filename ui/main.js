@@ -22,7 +22,7 @@ button.onclick = function(){
     
 };
 
-
+//name input
 
 
 var nameInput = document.getElementById('name');
