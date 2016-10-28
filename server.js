@@ -27,10 +27,11 @@ app.get('/submit-name',function(req,res){
 });
 
 
-var articleOne = {
+var articles = {
+            articleOne: {
   title:'Article-one',
   heading:'Article One',
-  date:'OCT 28,2016',
+  date:'SEP 17,2016',
   content:` <p class="para">
                    This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
                    This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
@@ -43,9 +44,28 @@ var articleOne = {
                    This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
                    This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
                </p>`
-  
-  
+ },
+                articleTwo: {
+        title:'Article-Two',
+        heading:'Article Two',
+        date:'OCT 20,2016',
+        content:` <p class="para">
+                       This is the second article.
+                   </p>`
+         
+        },
+             articleThree:{
+                 
+                 title:'Article-Three',
+                    heading:'Article Three',
+                    date:'OCT 20,2016',
+                    content:` <p class="para">
+                                   This is the Third article.
+                               </p>`
+    }
 };
+
+
 function createTemplate(data){
     var title = data.title;
     var date = data.date;
@@ -95,8 +115,8 @@ return htmlTemplate;
 }
 
 
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/main.js', function (req, res) {
