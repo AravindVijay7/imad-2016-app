@@ -19,6 +19,13 @@ app.get('/info', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'info.html'));
 });
 
+var names = [];
+app.get('/submit-name',function(req,res){
+   var name = req.query.name;
+   name.push(name);
+   res.send(JSON.stringify(names));
+});
+
 app.get('/article-one', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
