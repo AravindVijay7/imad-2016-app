@@ -64,6 +64,7 @@ body {
 }
 
 .hme {
+        background-image:url("ui/main.jpg");
         background-color: #cccccc;
 }
 
