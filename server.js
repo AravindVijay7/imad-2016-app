@@ -45,7 +45,7 @@ var articles = {
                    This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
                </p>`
  },
-            'article-Two': {
+            'article-two': {
         title:'Article-Two',
         heading:'Article Two',
         date:'OCT 20,2016',
@@ -54,7 +54,7 @@ var articles = {
                    </p>`
          
         },
-            'article-Three':{
+            'article-three':{
                  
                  title:'Article-Three',
                     heading:'Article Three',
