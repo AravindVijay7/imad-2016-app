@@ -65,7 +65,6 @@ var articles = {
  }
 };
 
-
 function createTemplate(data){
     var title = data.title;
     var date = data.date;
@@ -113,7 +112,6 @@ var htmlTemplate = `<html>
 </html>`;
 return htmlTemplate;
 }
-
 
 app.get('/:articleName', function (req, res) {
     var articleName = req.params.articleName;
