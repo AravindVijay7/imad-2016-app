@@ -28,7 +28,7 @@ app.get('/submit-name',function(req,res){
 
 
 var articles = {
-            articleOne: {
+            'article-One': {
   title:'Article-one',
   heading:'Article One',
   date:'SEP 17,2016',
@@ -45,7 +45,7 @@ var articles = {
                    This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
                </p>`
  },
-                articleTwo: {
+            'article-Two': {
         title:'Article-Two',
         heading:'Article Two',
         date:'OCT 20,2016',
@@ -54,7 +54,7 @@ var articles = {
                    </p>`
          
         },
-             articleThree:{
+            'article-Three':{
                  
                  title:'Article-Three',
                     heading:'Article Three',
@@ -62,7 +62,7 @@ var articles = {
                     content:` <p class="para">
                                    This is the Third article.
                                </p>`
-    }
+ }
 };
 
 
