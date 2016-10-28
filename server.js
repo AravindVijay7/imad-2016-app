@@ -28,7 +28,7 @@ app.get('/submit-name',function(req,res){
 
 
 var articles = {
-            'article-One': {
+            'article-one': {
   title:'Article-one',
   heading:'Article One',
   date:'SEP 17,2016',
