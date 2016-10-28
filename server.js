@@ -15,9 +15,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-
-
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -125,7 +122,9 @@ var htmlTemplate = `<html>
 </html>`;
 return htmlTemplate;
 }
+
 var pool= new Pool(config);
+
 app.get('/articles/:articleName', function (req, res) {
     //var articleName = req.params.articleName;
     pool.query("SELECT * FROM article WHERE title =" + req,params.articleNmae,function(err, result){
