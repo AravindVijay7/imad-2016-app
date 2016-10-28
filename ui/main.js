@@ -24,10 +24,10 @@ button.onclick = function(){
 
 //name ip
 
-var nameInput = document.getElementById('name');
- var name = nameInput.value;
-var submit = document.getElementById('submit_btn');
-submit.onClick = fuction(){
+//var nameInput = document.getElementById('name');
+// var name = nameInput.value;
+//var submit = document.getElementById('submit_btn');
+//submit.onClick = fuction(){
     
     
-};
+//};
