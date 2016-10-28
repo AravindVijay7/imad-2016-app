@@ -125,7 +125,7 @@ var htmlTemplate = `<html>
 </html>`;
 return htmlTemplate;
 }
-
+var pool= new pool(config);
 app.get('/articles/:articleName', function (req, res) {
     //var articleName = req.params.articleName;
     pool.query("SELECT * FROM article WHERE title =" + req,params.articleNmae,function(err, result){
