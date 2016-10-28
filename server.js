@@ -140,7 +140,7 @@ app.get('/articles/:articleName', function (req, res) {
            
        }
     });
-  res.send(createTemplate(articlesData));
+  res.send(createTemplate(articleData));
 });
 
 app.get('/ui/main.js', function (req, res) {
