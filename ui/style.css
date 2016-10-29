@@ -70,6 +70,12 @@ body {
     border-radius: 4px;
 }
 
+.btn-red{
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #e89795; 
+}
+
 .headli{
     padding-left:160px;
     
