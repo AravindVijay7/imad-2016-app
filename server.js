@@ -93,7 +93,7 @@ var htmlTemplate = `<html>
            
           <div class="container"> 
            <div>
-               <a href ="/">HOME</a>
+               <a class="btn btn-red" href ="/">HOME</a>
            </div>
            
            <hr/>
