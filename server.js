@@ -105,6 +105,12 @@ app.get('/check-login', function (req, res) {
     
 });
 
+app.get('/logot',function (req,res){
+   delete req.session.auth;
+   res.send('logged out');
+    
+});
+
 
 app.get('/info', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'info.html'));
