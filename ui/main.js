@@ -13,9 +13,15 @@ submit.onclick= function(){
          if(request.status === 200){
              
              console.log('user loged in');
-             
-             
-             
+             alert("Login Successfully");
+         }else {
+             if(request.status==400){
+                 alert("Invalid password/Username");
+             }else {
+             if(request.status==400){
+                 alert("Internal Server Error");
+             }
+          }
          }
      }
      
