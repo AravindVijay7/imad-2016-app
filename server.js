@@ -18,7 +18,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
-app.use(session({
+app.use(Session({
    secret:'someRandomValue',
    cookie:{maxAge: 1000*60*24*30}
 }));
