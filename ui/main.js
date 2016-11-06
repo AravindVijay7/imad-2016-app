@@ -16,6 +16,7 @@ submit.onclick= function(){
          }else {
              if(request.status==403){
                  alert("Invalid password/Username");
+                 submit.value = 'Invalid credentials. Try again?';
              }else {
              if(request.status==500){
                  alert("Internal Server Error");
