@@ -29,7 +29,7 @@ app.get('/counter',function(req, res){
 app.get('/hash/:input',function(req,res){
     
     var hashString = hash(req.params.input,'this-is-a-ramdom-string');
-    //res.sendFile(path.join(_dirname,'ui','index.html'));
+    res.sendFile(path.join(_dirname,'ui','index.html'));
 });
 
 function hash(input,salt){
