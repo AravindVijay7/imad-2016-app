@@ -26,9 +26,7 @@ app.get('/counter',function(req, res){
    res.send(counter.toString());
 });
 
-app.get('/hash/:input',function(req,res){
-    
-    var hashString = hash(req.params.input,'this-is-a-ramdom-string');
+app.get('/',function(req,res){
     res.sendFile(path.join(__dirname,'ui','index.html'));
 });
 
@@ -38,7 +36,11 @@ function hash(input,salt){
     
 }
 
-
+app.get('/hash/:input',function(req,res){
+   var hashString = hash(req.params.input,'this-is-a-ramdom-string');
+   res.send(hashedString);
+    
+});
 
 
 
