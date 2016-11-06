@@ -37,7 +37,7 @@ function hash(input,salt){
 }
 
 app.get('/hash/:input',function(req,res){
-   var hashString = hash(req.params.input,'this-is-a-ramdom-string');
+   var hashedString = hash(req.params.input,'this-is-a-ramdom-string');
    res.send(hashedString);
     
 });
