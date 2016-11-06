@@ -85,6 +85,7 @@ app.post('/login',function(req,res){
                if(hashedPassword == dbString){
                    req.session.auth={userId: result.rows[0].id};
                    res.send('LOGIN SUCCESSFUL');
+                   res.redirect('/info');
                }else{
                  res.status(403).send('Username/Password Invalid');  
                }
