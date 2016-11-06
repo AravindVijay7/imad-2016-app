@@ -14,6 +14,7 @@ submit.onclick= function(){
              
              console.log('user loged in');
              alert("Login Successfully");
+             window.location.href ='/info'
          }else {
              if(request.status==403){
                  alert("Invalid password/Username");
