@@ -182,6 +182,7 @@ var htmlTemplate = `<html>
           <div class="container"> 
            <div>
                <a class="btn btn-primary" href ="/">HOME</a>
+               <span class="lefthead"> <a class="btn btn-red" href ="/logout">LOGOUT</a> </span>
            </div>
            
            <hr/>
