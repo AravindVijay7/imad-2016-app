@@ -96,7 +96,6 @@ app.post('/login',function(req,res){
 
 
 
-
 app.get('/info', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'info.html'));
 });
