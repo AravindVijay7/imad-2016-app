@@ -13,7 +13,7 @@ function loadCommentForm () {
 
         <br/>
 
-        <input type="submit" id="submit" value="Submit" />
+       <font color="black"> <input type="submit" id="submit" value="Submit" /> </font>
 
         <br/>
 
