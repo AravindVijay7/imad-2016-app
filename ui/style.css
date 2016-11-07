@@ -88,3 +88,7 @@ body {
 .lefthead{
     padding-left:79%;
 }
+
+.infobody{
+    background-image:url(ui/main.jpg);
+}
