@@ -135,43 +135,7 @@ var names = [];
 
 
 
-var articles = {
-            'article-one': {
-  title:'Article-one',
-  heading:'Article One',
-  date:'SEP 17,2016',
-  content:` <p class="para">
-                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-               </p>
-               
-               <p>
-                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-                   This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-               </p>`
- },
-            'article-two': {
-        title:'Article-Two',
-        heading:'Article Two',
-        date:'OCT 20,2016',
-        content:` <p class="para">
-                       This is the second article.
-                   </p>`
-         
-        },
-            'article-three':{
-                 
-                 title:'Article-Three',
-                    heading:'Article Three',
-                    date:'OCT 20,2016',
-                    content:` <p class="para">
-                                   This is the Third article.
-                               </p>`
- }
-};
+
 
 function createTemplate(data){
     var title = data.title;
