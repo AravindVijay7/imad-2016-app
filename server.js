@@ -149,15 +149,31 @@ var htmlTemplate = `<html>
         <title> ${title} </title>
         <meta name="viewport" content="width=device-width , initial-scale=1"/> 
         <link href="/ui/style.css" rel="stylesheet" />
+        <link href="/ui/bootstrap.min.css"  rel="stylesheet">
     </head>
     
       <body class = "infobody">
+      
+      
+      
            
           <div class="container"> 
-           <div>
-               <a class="btn btn-primary" href ="/">HOME</a>
-               <span class="lefthead"> <a class="btn btn-red" href ="/logout">LOGOUT</a> </span>
-           </div>
+                      
+        <section class="navbar navbar-fixed-top custom-navbar" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="/" class="navbar-brand">BLOG</a></div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/" class="smoothScroll">HOME</a></li>
+				<li><a href="/logout" class="smoothScroll">LOGOUT</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+        <br>
+         <br>
            
            <hr/>
            
