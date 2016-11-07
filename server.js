@@ -202,6 +202,10 @@ app.get('/ui/info.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'info.js'));
 });
 
+app.get('/ui/smoothscroll.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'smoothscroll.js'));
+});
+
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
