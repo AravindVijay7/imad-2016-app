@@ -226,7 +226,6 @@ var htmlTemplate = `<html>
 return htmlTemplate;
 }
 
-var pool= new Pool(config);
 
 app.get('/articles/:articleName', function (req, res) {
     //var articleName = req.params.articleName;
