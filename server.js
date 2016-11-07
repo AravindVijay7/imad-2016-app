@@ -238,6 +238,10 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+app.get('/ui/main.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.jpg'));
+});
+
 app.get('/articles/:articleName', function (req, res) {
     //var articleName = req.params.articleName;
     pool.query("SELECT * FROM article WHERE title = $1",[req.params.articleName],function(err, result){
