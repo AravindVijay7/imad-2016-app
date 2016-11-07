@@ -90,5 +90,6 @@ body {
 }
 
 .infobody{
-    background-image:url(/ui/main.jpg)no-repeat;
+    background-image:url(/ui/main.jpg);
+    background-repeat: no-repeat;
 }
