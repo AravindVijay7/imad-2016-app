@@ -194,6 +194,10 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
+app.get('/ui/bootstrap.min.css ', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'bootstrap.min.css'));
+});
+
 app.get('/ui/info.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'info.js'));
 });
