@@ -122,10 +122,55 @@ app.get('/get-articles', function (req, res) {
       } else {
           res.send(JSON.stringify(result.rows));
       }
-
    });
-
 });
+
+
+app.get('/get-comments/:articleName', function (req, res) {
+
+   pool.query('SELECT comment.*, "user".username FROM article, comment, "user" WHERE article.title = $1 AND article.id = comment.article_id AND comment.user_id = "user".id ORDER BY comment.timestamp DESC', [req.params.articleName], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send(JSON.stringify(result.rows));
+      }
+   });
+});
+
+
+
+app.post('/submit-comment/:articleName', function (req, res) {
+
+      if (req.session && req.session.auth && req.session.auth.userId) {
+
+        pool.query('SELECT * from article where title = $1', [req.params.articleName], function (err, result) {
+            if (err) {
+                res.status(500).send(err.toString());
+            } else {
+                if (result.rows.length === 0) {
+                    res.status(400).send('Article not found');
+                } else {
+                    var articleId = result.rows[0].id;
+                    pool.query(
+                        "INSERT INTO comment (comment, article_id, user_id) VALUES ($1, $2, $3)",
+                        [req.body.comment, articleId, req.session.auth.userId],
+                        function (err, result) {
+                            if (err) {
+                                res.status(500).send(err.toString());
+                            } else {
+                                res.status(200).send('Comment inserted!');
+                            }
+                        });
+                }
+            }
+       });     
+    } else {
+        res.status(403).send('Only logged in users can comment');
+    }
+});
+
+
+
 
 app.get('/info', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'info.html'));
@@ -203,6 +248,11 @@ var htmlTemplate = `<html>
 return htmlTemplate;
 }
 
+
+
+
+
+
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
@@ -217,6 +267,10 @@ app.get('/ui/bootstrap.min.css', function (req, res) {
 
 app.get('/ui/info.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'info.js'));
+});
+
+app.get('/ui/article.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article.js'));
 });
 
 app.get('/ui/smoothscroll.js', function (req, res) {
