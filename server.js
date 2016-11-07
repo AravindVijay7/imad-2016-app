@@ -166,6 +166,7 @@ var htmlTemplate = `<html>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/" class="smoothScroll">HOME</a></li>
+				<li><a href="/info" class="smoothScroll">INFO</a></li>
 				<li><a href="/logout" class="smoothScroll">LOGOUT</a></li>
 			</ul>
 		</div>
