@@ -235,8 +235,7 @@ var htmlTemplate = `<html>
              ${content}
            </div>
            
-        </div>
-                      <div>
+         <div>
 
                 ${content}
 
@@ -257,7 +256,7 @@ var htmlTemplate = `<html>
               </div>
 
           </div>
-
+   </div>
           <script type="text/javascript" src="/ui/article.js"></script>   
            
       </body>
