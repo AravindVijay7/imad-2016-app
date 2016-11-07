@@ -187,7 +187,7 @@ var htmlTemplate = `<html>
         <link href="/ui/style.css" rel="stylesheet" />
     </head>
     
-      <body>
+      <body class = "infobody">
            
           <div class="container"> 
            <div>
