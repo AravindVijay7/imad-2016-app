@@ -132,7 +132,7 @@ body {
   color: #ffffff;
   outline: none;
 }
-.custom-navbar .nav li.active > a {
+.custom-navbar .nav .active > a {
       color: #00c6d7;
     }
 .custom-navbar .navbar-toggle {
@@ -148,9 +148,9 @@ body {
             background: #4B4B4B;
             padding: 10px;
             border-bottom: 0;
-            background: 0 0;
+          
          }
-    .custom-navbar.top-nav-collapse {
+    .custom-navbar .top-nav-collapse {
             padding: 8px;
             background: #4B4B4B;
         }
