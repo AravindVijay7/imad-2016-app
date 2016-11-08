@@ -29,8 +29,7 @@ app.get('/counter',function(req, res){
    res.send(counter.toString());
 });
 
-app.get('/',function(req,res){
-    res.sendFile(path.join(__dirname,'ui','index.html'));
+
 });
 
 function hash(input,salt){
@@ -119,7 +118,7 @@ app.get('/get-articles', function (req, res) {
    });
 });
 
-var pool = new Pool(config);
+
 
 app.get('/get-comments/:articleName', function (req, res) {
 
@@ -133,7 +132,7 @@ app.get('/get-comments/:articleName', function (req, res) {
 
 });
 
-var pool = new Pool(config);
+
 
 app.post('/submit-comment/:articleName', function (req, res) {
 
@@ -262,41 +261,6 @@ return htmlTemplate;
 
 
 
-
-
-
-app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
-
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
-
-app.get('/ui/bootstrap.min.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'bootstrap.min.css'));
-});
-
-app.get('/ui/info.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'info.js'));
-});
-
-app.get('/ui/article.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article.js'));
-});
-
-app.get('/ui/smoothscroll.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'smoothscroll.js'));
-});
-
-app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
-});
-
-app.get('/ui/main.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.jpg'));
-});
-
 app.get('/articles/:articleName', function (req, res) {
     //var articleName = req.params.articleName;
     pool.query("SELECT * FROM article WHERE title = $1",[req.params.articleName],function(err, result){
@@ -316,6 +280,11 @@ app.get('/articles/:articleName', function (req, res) {
 });
 
 
+app.get('/ui/:fileName', function (req, res) {
+
+  res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
+
+});
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
