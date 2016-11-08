@@ -23,12 +23,6 @@ app.use(session({
    cookie:{maxAge: 1000*60*24*30}
 }));
 
-
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
 var counter=0;
 app.get('/counter',function(req, res){
    counter = counter + 1;
@@ -151,10 +145,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
                     res.status(400).send('Article not found');
                 } else {
                     var articleId = result.rows[0].id;
-                    pool.query(
-                        "INSERT INTO comment (comment, article_id, user_id) VALUES ($1, $2, $3)",
-                        [req.body.comment, articleId, req.session.auth.userId],
-                        function (err, result) {
+        pool.query("INSERT INTO comment (comment, article_id, user_id) VALUES ($1, $2, $3)",[req.body.comment, articleId, req.session.auth.userId], function (err, result) {
                             if (err) {
                                 res.status(500).send(err.toString());
                             } else {
