@@ -137,7 +137,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
                     res.status(400).send('Article not found');
                 } else {
                     var articleId = result.rows[0].id;
-pool.query("INSERT INTO comment (comment, article_id, user_id) VALUES ($1, $2, $3)", [req.body.comment, articleId, req.session.auth.userId], function (err, result) {
+pool.query("INSERT INTO comment (article_id, user_id, comment) VALUES ($1, $2, $3)", [req.body.comment, articleId, req.session.auth.userId], function (err, result) {
                             if (err) {
                                res.status(500).send(err.toString());
                             } else {
