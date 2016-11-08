@@ -159,4 +159,6 @@ body {
 .mainart{
     padding-right:20%;
     padding-left:20%;
+    list-style-type: none;
+
 }
