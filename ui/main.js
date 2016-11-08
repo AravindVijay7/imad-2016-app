@@ -2,6 +2,9 @@
 
 
 
+
+
+
 var submit = document.getElementById('submit_btn');
 submit.onclick= function(){
 
@@ -70,7 +73,26 @@ submit.onclick= function(){
      
  };
  
- 
+ function loadLogin () {
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+            } else {
+                loadLoginForm();
+            }
+        }
+    };
+
+    
+
+    request.open('GET', '/check-login', true);
+
+    request.send(null);
+
+}
 
 
 function loadArticles () {
@@ -98,6 +120,8 @@ function loadArticles () {
     request.send(null);
 
 }
+
+
 
 
 loadArticles();
