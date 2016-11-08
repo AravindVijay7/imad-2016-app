@@ -23,10 +23,6 @@ app.use(session({
    cookie:{maxAge: 1000*60*24*30}
 }));
 
-var counter=0;
-
-
-});
 
 function hash(input,salt){
     var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
@@ -161,11 +157,6 @@ pool.query("INSERT INTO comment (comment, article_id, user_id) VALUES ($1, $2, $
 app.get('/info', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'info.html'));
 });
-
-var names = [];
-
-
-
 
 
 function createTemplate(data){
