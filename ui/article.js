@@ -3,7 +3,7 @@ var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
     var commentFormHtml = `
-       <h5>Submit a comment</h5> <hr>
+       <h5>Submit a comment</h5> 
        <font color="black"> <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea></font>
         <br/>
        <font color="black"> <input type="submit" id="submit" value="Submit" /> </font>
@@ -76,7 +76,7 @@ function loadComments () {
                 var commentsData = JSON.parse(this.responseText);
                 for (var i=0; i< commentsData.length; i++) {
                     var time = new Date(commentsData[i].timestamp);
-                    content += `<div class="comment">
+                    content += `<hr> <div class="comment">
                         <p>${escapeHTML(commentsData[i].comment)}</p>
                         <div class="commenter">
                             ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()} 
