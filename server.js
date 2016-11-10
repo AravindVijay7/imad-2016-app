@@ -24,6 +24,96 @@ app.use(session({
 }));
 
 
+function createTemplate(data){
+    var title = data.title;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
+var htmlTemplate = `<html>
+    
+    <head>
+        
+        <title> ${title} </title>
+        <meta name="viewport" content="width=device-width , initial-scale=1"/> 
+        <link href="/ui/style.css" rel="stylesheet" />
+        <link href="/ui/bootstrap.min.css"  rel="stylesheet">
+    </head>
+    
+      <body class = "infobody">
+      
+      
+      
+           
+          <div class="container"> 
+                      
+        <section class="navbar navbar-fixed-top custom-navbar" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="/" class="navbar-brand">BLOG</a></div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/" class="smoothScroll">HOME</a></li>
+				<li><a href="/info" class="smoothScroll">INFO</a></li>
+				<li><a href="/logout" class="smoothScroll">LOGOUT</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+        <br>
+         <br>
+           
+           <hr/>
+           
+           <div align="center">
+               <h2>${heading} </h2>
+           </div>
+           
+           <div>
+               <h3>${date.toDateString()}</h3>
+           </div>
+           
+           <div>
+             ${content}
+           </div>
+           
+         <div>
+
+                ${content}
+
+              </div>
+
+              <hr/>
+
+              <h4>Comments</h4>
+
+              <div id="comment_form">
+
+              </div>
+
+              <div id="comments">
+
+                <center>Loading comments...</center>
+
+              </div>
+
+          </div>
+   </div>
+          <script type="text/javascript" src="/ui/article.js"></script>   
+           
+      </body>
+    
+    
+    
+    
+    
+</html>`;
+return htmlTemplate;
+}
+
+
+
+
 function hash(input,salt){
     var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
     return ["pbkdf2","10000",salt,hashed.toString('hex')].join('$');
@@ -159,92 +249,7 @@ app.get('/info', function (req, res) {
 });
 
 
-function createTemplate(data){
-    var title = data.title;
-    var date = data.date;
-    var heading = data.heading;
-    var content = data.content;
-var htmlTemplate = `<html>
-    
-    <head>
-        
-        <title> ${title} </title>
-        <meta name="viewport" content="width=device-width , initial-scale=1"/> 
-        <link href="/ui/style.css" rel="stylesheet" />
-        <link href="/ui/bootstrap.min.css"  rel="stylesheet">
-    </head>
-    
-      <body class = "infobody">
-      
-      
-      
-           
-          <div class="container"> 
-                      
-        <section class="navbar navbar-fixed-top custom-navbar" role="navigation">
-	<div class="container">
-		<div class="navbar-header">
-			<a href="/" class="navbar-brand">BLOG</a></div>
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/" class="smoothScroll">HOME</a></li>
-				<li><a href="/info" class="smoothScroll">INFO</a></li>
-				<li><a href="/logout" class="smoothScroll">LOGOUT</a></li>
-			</ul>
-		</div>
-	</div>
-</section>
 
-        <br>
-         <br>
-           
-           <hr/>
-           
-           <div align="center">
-               <h2>${heading} </h2>
-           </div>
-           
-           <div>
-               <h3>${date.toDateString()}</h3>
-           </div>
-           
-           <div>
-             ${content}
-           </div>
-           
-         <div>
-
-                ${content}
-
-              </div>
-
-              <hr/>
-
-              <h4>Comments</h4>
-
-              <div id="comment_form">
-
-              </div>
-
-              <div id="comments">
-
-                <center>Loading comments...</center>
-
-              </div>
-
-          </div>
-   </div>
-          <script type="text/javascript" src="/ui/article.js"></script>   
-           
-      </body>
-    
-    
-    
-    
-    
-</html>`;
-return htmlTemplate;
-}
 
 
 
