@@ -98,7 +98,13 @@ body {
 }
 
 
+.indexbody{
+    background-image:url(/ui/sub.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color:WHITE;
 
+}
 
 
 
